@@ -1,5 +1,4 @@
-Modifiez l'ID du span activité en span_activity
-Inclure Dans le span uniquement le mot "solaire" ou "photovoltaïque" du titre
+Modifiez l'ID du span activité en span_service
 Coller le script dans before body 
 
 
@@ -17,19 +16,28 @@ Coller le script dans before body
         // Function to change the div text based on the utm_campaign value
         function updateDivText() {
             var campaign = getParameterByName('utm_campaign');
-            var divElement = document.getElementById('span_activity');
+            var divElement = document.getElementById('span_service');
 
             if (divElement) {
                 switch(campaign ? campaign.toLowerCase() : '') {
-                    case 'photovoltaique':
-                        divElement.textContent = 'Photovoltaïque';
+                    case 'couvreur':
+                        divElement.textContent = 'Couvreur';
                         break;
-                    case 'solaire':
-                        divElement.textContent = 'Solaire';
+                    case 'zingueur':
+                        divElement.textContent = 'Zingueur';
+                        break;
+                    case 'renovation':
+                        divElement.textContent = 'Rénovation De Toiture';
+                        break;
+                    case 'nettoyage':
+                        divElement.textContent = 'Nettoyage De Toiture';
+                        break;
+                    case 'demoussage':
+                        divElement.textContent = 'Démoussage De Toiture';
                         break;
                     default:
                         // Optional: Set a default text if the campaign value doesn't match any case
-                        divElement.textContent = 'Panneaux Solaires';
+                        divElement.textContent = 'Toiture';
                         break;
                 }
             }
